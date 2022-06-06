@@ -1,0 +1,39 @@
+﻿@model SimpleDotNetCoreMVCApp.Models.CarsModel
+@{
+    ViewData["Title"] = "ndex";
+}
+
+<h2>Index</h2>
+
+<p>Hello from our View Template!</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Price
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.SelectCarList)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+    }
+
+</table>
